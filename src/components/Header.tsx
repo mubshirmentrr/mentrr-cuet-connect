@@ -21,9 +21,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/mentrr-logo.png" 
+              src="/lovable-uploads/f7e21553-4329-45df-a332-0950c73f3a67.png" 
               alt="Mentrr Learning" 
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
           </div>
 

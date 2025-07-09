@@ -1,12 +1,13 @@
-import { Star, Award, Users, BookOpen, ArrowRight } from "lucide-react";
+import { Star, Award, Users, BookOpen, ArrowRight, GraduationCap, Trophy, Target, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import PYQLeadMagnet from "./PYQLeadMagnet";
 
 const Hero = () => {
   const stats = [
-    { icon: Users, value: "4000+", label: "Successful Students" },
-    { icon: Award, value: "#1", label: "CUET Institute in Kerala" },
-    { icon: BookOpen, value: "3", label: "Exam Categories" },
-    { icon: Star, value: "5.0", label: "Student Rating" },
+    { icon: GraduationCap, value: "4000+", label: "Successful Students" },
+    { icon: Trophy, value: "#1", label: "CUET Institute in Kerala" },
+    { icon: Target, value: "3", label: "Exam Categories" },
+    { icon: TrendingUp, value: "5.0", label: "Student Rating" },
   ];
 
   const handleWhatsAppClick = () => {
@@ -60,9 +61,19 @@ const Hero = () => {
                 variant="mentrr-outline" 
                 size="lg" 
                 className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white hover:text-mentrr-navy"
+                onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View Success Stories
               </Button>
+            </div>
+
+            {/* PYQ Lead Magnet */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <div className="text-center space-y-4">
+                <h3 className="text-xl font-semibold text-white">🎯 Free PYQ Materials</h3>
+                <p className="text-gray-300 text-sm">Get 5+ years of previous year questions with detailed solutions</p>
+                <PYQLeadMagnet />
+              </div>
             </div>
 
           </div>
