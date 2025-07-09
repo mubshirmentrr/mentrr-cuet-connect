@@ -104,7 +104,7 @@ const About = () => {
             {achievements.map((achievement, index) => (
               <div 
                 key={index}
-                className="bg-gradient-to-br from-mentrr-light-blue to-white p-6 rounded-2xl text-center border border-gray-100 hover:shadow-[var(--shadow-card)] transition-all duration-300"
+                className="bg-white p-6 rounded-2xl text-center border-2 border-mentrr-green/30 hover:border-mentrr-green hover:shadow-[var(--shadow-card)] transition-all duration-300"
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-mentrr-green/20 rounded-xl mb-4">
                   <achievement.icon className="h-8 w-8 text-mentrr-green" />
@@ -131,7 +131,7 @@ const About = () => {
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 hover:scale-105 border border-gray-100"
+                className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 hover:scale-105 border-2 border-mentrr-green/20 hover:border-mentrr-green/40"
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>
                 <h4 className="text-xl font-bold text-mentrr-navy mb-3">{feature.title}</h4>

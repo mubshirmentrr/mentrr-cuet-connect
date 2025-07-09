@@ -10,7 +10,7 @@ const Hero = () => {
   ];
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/917909228688?text=Hi, I want to know more about CUET coaching", "_blank");
+    window.open("https://wa.me/+917909228688", "_blank");
   };
 
   return (
@@ -34,7 +34,7 @@ const Hero = () => {
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
                 Master <span className="text-mentrr-green">CUET</span> with
                 <br />
-                <span className="bg-gradient-to-r from-mentrr-orange to-mentrr-yellow bg-clip-text text-transparent">
+                <span className="text-mentrr-green">
                   Expert Guidance
                 </span>
               </h1>
@@ -65,16 +65,6 @@ const Hero = () => {
               </Button>
             </div>
 
-            {/* Contact Info */}
-            <div className="flex items-center space-x-4 text-gray-300">
-              <span>Call/WhatsApp:</span>
-              <a 
-                href="tel:+917909228688" 
-                className="text-mentrr-green font-semibold hover:text-mentrr-orange transition-colors"
-              >
-                +91 7909 228 688
-              </a>
-            </div>
           </div>
 
           {/* Right Content - Stats Grid */}
@@ -82,14 +72,14 @@ const Hero = () => {
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                className="bg-white rounded-2xl p-6 text-center border-2 border-mentrr-green/30 hover:border-mentrr-green transition-all duration-300 hover:scale-105 shadow-lg"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-mentrr-green/20 rounded-xl mb-4">
                   <stat.icon className="h-6 w-6 text-mentrr-green" />
                 </div>
-                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-gray-300 text-sm">{stat.label}</div>
+                <div className="text-3xl font-bold text-mentrr-navy mb-2">{stat.value}</div>
+                <div className="text-gray-600 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>

@@ -21,9 +21,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/16940a6a-9a4a-4c0d-98be-282e03a204e2.png" 
+              src="/lovable-uploads/mentrr-logo.png" 
               alt="Mentrr Learning" 
-              className="h-8 w-auto"
+              className="h-10 w-auto"
             />
           </div>
 
@@ -42,11 +42,11 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:+917909228688" className="flex items-center text-mentrr-navy hover:text-mentrr-green transition-colors">
-              <Phone className="h-4 w-4 mr-2" />
-              <span className="font-medium">+91 7909 228 688</span>
-            </a>
-            <Button variant="mentrr" size="sm">
+            <Button 
+              variant="mentrr" 
+              size="sm"
+              onClick={() => window.open("https://wa.me/+917909228688", "_blank")}
+            >
               Join Now
             </Button>
           </div>
@@ -77,12 +77,13 @@ const Header = () => {
                 </a>
               ))}
               <div className="pt-4 space-y-2">
-                <a href="tel:+917909228688" className="flex items-center px-3 py-2 text-mentrr-navy">
-                  <Phone className="h-4 w-4 mr-2" />
-                  <span>+91 7909 228 688</span>
-                </a>
                 <div className="px-3">
-                  <Button variant="mentrr" size="sm" className="w-full">
+                  <Button 
+                    variant="mentrr" 
+                    size="sm" 
+                    className="w-full"
+                    onClick={() => window.open("https://wa.me/+917909228688", "_blank")}
+                  >
                     Join Now
                   </Button>
                 </div>
