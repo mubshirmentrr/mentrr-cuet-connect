@@ -2,14 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Mentrr Learning Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    
+    /* Brand Colors - Mentrr */
+    --mentrr-navy: 220 54% 16%;
+    --mentrr-green: 155 100% 35%;
+    --mentrr-orange: 15 85% 55%;
+    --mentrr-yellow: 55 100% 50%;
+    --mentrr-light-blue: 215 100% 96%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--mentrr-navy)), hsl(220 54% 20%));
+    --gradient-success: linear-gradient(135deg, hsl(var(--mentrr-green)), hsl(155 100% 40%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--mentrr-orange)), hsl(15 85% 60%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--mentrr-navy) / 0.3);
+    --shadow-card: 0 4px 20px -2px hsl(var(--mentrr-navy) / 0.1);
+    --shadow-button: 0 4px 15px -3px hsl(var(--mentrr-green) / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;

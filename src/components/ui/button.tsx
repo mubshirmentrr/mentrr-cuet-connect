@@ -18,6 +18,10 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        mentrr: "bg-mentrr-green text-white hover:bg-mentrr-green/90 shadow-[var(--shadow-button)] transition-all duration-300 hover:scale-105",
+        "mentrr-outline": "border-2 border-mentrr-green text-mentrr-green bg-transparent hover:bg-mentrr-green hover:text-white transition-all duration-300",
+        "mentrr-orange": "bg-mentrr-orange text-white hover:bg-mentrr-orange/90 shadow-lg transition-all duration-300 hover:scale-105",
+        hero: "bg-gradient-to-r from-mentrr-green to-emerald-500 text-white hover:from-mentrr-green/90 hover:to-emerald-500/90 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl",
       },
       size: {
         default: "h-10 px-4 py-2",
