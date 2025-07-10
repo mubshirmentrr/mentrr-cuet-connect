@@ -37,15 +37,15 @@ const Hero = () => {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                From <span className="text-mentrr-orange">CUET Confusion</span> to
+                Your Dream College is
                 <br />
                 <span className="text-mentrr-green">
-                  College Success
+                  Just One CUET Away
                 </span>
               </h1>
               
               <p className="text-xl text-gray-300 max-w-lg">
-                <strong className="text-white">WARNING:</strong> 83% of CUET aspirants fail because they study without a proven system. Our 4000+ successful students used our SECRET 3-step methodology to crack CUET UG, PG & NCET in just 6 months.
+                Join 4000+ students who got into their dream colleges with our proven CUET coaching. We make CUET preparation simple, effective, and stress-free with expert guidance and smart study plans.
               </p>
             </div>
 
@@ -74,8 +74,8 @@ const Hero = () => {
             {/* PYQ Lead Magnet */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
               <div className="text-center space-y-4">
-                <h3 className="text-xl font-semibold text-white">🎯 FREE: The "CUET Crack Code"</h3>
-                <p className="text-gray-300 text-sm">Get the exact 5-year question bank + secret solving techniques that helped our toppers score 99th percentile</p>
+                <h3 className="text-xl font-semibold text-white">🎯 FREE: CUET Question Bank</h3>
+                <p className="text-gray-300 text-sm">Get 3 years of previous year questions with detailed solutions to boost your CUET preparation</p>
                 <PYQLeadMagnet />
               </div>
             </div>
