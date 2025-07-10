@@ -55,6 +55,11 @@ Please share the PYQ materials. Thank you!`;
     setIsOpen(false);
     form.reset();
     
+    // Redirect to courses section after a short delay
+    setTimeout(() => {
+      document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
+    }, 1000);
+    
     toast({
       title: "Redirecting to WhatsApp",
       description: "You'll receive the PYQ materials shortly!",
@@ -158,7 +163,7 @@ Please share the PYQ materials. Thank you!`;
               />
               
               <Button type="submit" className="w-full" variant="mentrr" size="lg">
-                Get PYQ Materials Now
+                Join Now
               </Button>
             </form>
           </Form>

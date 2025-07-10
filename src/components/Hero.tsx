@@ -7,7 +7,7 @@ const Hero = () => {
     { icon: GraduationCap, value: "4000+", label: "Successful Students" },
     { icon: Trophy, value: "#1", label: "CUET Institute in Kerala" },
     { icon: Target, value: "3", label: "Exam Categories" },
-    { icon: TrendingUp, value: "5.0", label: "Student Rating" },
+    { icon: TrendingUp, value: "4.9", label: "Student Rating" },
   ];
 
   const handleWhatsAppClick = () => {
@@ -37,10 +37,10 @@ const Hero = () => {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                Your Dream College is
+                Crack CUET with Confidence
                 <br />
                 <span className="text-mentrr-green">
-                  Just One CUET Away
+                  Only at Mentrr
                 </span>
               </h1>
               
@@ -57,7 +57,7 @@ const Hero = () => {
                 className="text-lg px-8 py-4"
                 onClick={handleStartJourney}
               >
-                Discover Our Proven System
+                Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
