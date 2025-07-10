@@ -14,6 +14,10 @@ const Hero = () => {
     window.open("https://wa.me/+917909228688", "_blank");
   };
 
+  const handleStartJourney = () => {
+    document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-mentrr-navy via-blue-900 to-mentrr-navy overflow-hidden">
       {/* Background Effects */}
@@ -33,15 +37,15 @@ const Hero = () => {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                Master <span className="text-mentrr-green">CUET</span> with
+                From <span className="text-mentrr-orange">CUET Confusion</span> to
                 <br />
                 <span className="text-mentrr-green">
-                  Expert Guidance
+                  College Success
                 </span>
               </h1>
               
               <p className="text-xl text-gray-300 max-w-lg">
-                Join 4000+ successful students who cracked CUET UG, CUET PG & NCET with our proven teaching methodology and personalized guidance.
+                <strong className="text-white">WARNING:</strong> 83% of CUET aspirants fail because they study without a proven system. Our 4000+ successful students used our SECRET 3-step methodology to crack CUET UG, PG & NCET in just 6 months.
               </p>
             </div>
 
@@ -51,9 +55,9 @@ const Hero = () => {
                 variant="hero" 
                 size="lg" 
                 className="text-lg px-8 py-4"
-                onClick={handleWhatsAppClick}
+                onClick={handleStartJourney}
               >
-                Start Your Journey
+                Discover Our Proven System
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
@@ -70,8 +74,8 @@ const Hero = () => {
             {/* PYQ Lead Magnet */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
               <div className="text-center space-y-4">
-                <h3 className="text-xl font-semibold text-white">🎯 Free PYQ Materials</h3>
-                <p className="text-gray-300 text-sm">Get 5+ years of previous year questions with detailed solutions</p>
+                <h3 className="text-xl font-semibold text-white">🎯 FREE: The "CUET Crack Code"</h3>
+                <p className="text-gray-300 text-sm">Get the exact 5-year question bank + secret solving techniques that helped our toppers score 99th percentile</p>
                 <PYQLeadMagnet />
               </div>
             </div>
