@@ -7,7 +7,7 @@ const Hero = () => {
     { icon: GraduationCap, value: "4000+", label: "Successful Students" },
     { icon: Trophy, value: "#1", label: "CUET Institute in Kerala" },
     { icon: Target, value: "3", label: "Exam Categories" },
-    { icon: TrendingUp, value: "4.9", label: "Student Rating" },
+    { icon: TrendingUp, value: "97.43%", label: "Success Rate" },
   ];
 
   const handleWhatsAppClick = () => {

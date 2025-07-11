@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { MapPin, GraduationCap, BookOpen, Users, Search, Filter } from "lucide-react";
+import { MapPin, GraduationCap, BookOpen, Users, Search, Filter, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Universities = () => {
   const [selectedState, setSelectedState] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
+  const [showAllUniversities, setShowAllUniversities] = useState(false);
 
   const centralUniversities = [
+    // Top 10 Featured Universities
     {
       name: "Delhi University",
       location: "New Delhi",
@@ -16,7 +18,8 @@ const Universities = () => {
       specializations: ["Liberal Arts", "Sciences", "Commerce", "Social Sciences"],
       ranking: "#2 in India",
       students: "132,000+",
-      image: "🏛️"
+      logo: "https://upload.wikimedia.org/wikipedia/en/b/b8/University_of_Delhi.png",
+      featured: true
     },
     {
       name: "Jawaharlal Nehru University",
@@ -27,18 +30,8 @@ const Universities = () => {
       specializations: ["International Studies", "Social Sciences", "Languages", "Sciences"],
       ranking: "#3 in India",
       students: "8,500+",
-      image: "🎓"
-    },
-    {
-      name: "Jamia Millia Islamia",
-      location: "New Delhi",
-      state: "Delhi", 
-      established: 1920,
-      courses: ["BA", "BSc", "BTech", "MA", "MSc", "MTech", "PhD"],
-      specializations: ["Engineering", "Humanities", "Social Sciences", "Mass Communication"],
-      ranking: "#4 in India",
-      students: "15,000+",
-      image: "🕌"
+      logo: "https://upload.wikimedia.org/wikipedia/en/7/7f/Jawaharlal_Nehru_University_logo.png",
+      featured: true
     },
     {
       name: "Banaras Hindu University",
@@ -49,7 +42,8 @@ const Universities = () => {
       specializations: ["Engineering", "Medicine", "Arts", "Sciences", "Management"],
       ranking: "#5 in India", 
       students: "30,000+",
-      image: "🏛️"
+      logo: "https://upload.wikimedia.org/wikipedia/en/c/c3/Banaras_Hindu_University_Logo.png",
+      featured: true
     },
     {
       name: "Aligarh Muslim University",
@@ -60,18 +54,20 @@ const Universities = () => {
       specializations: ["Engineering", "Medicine", "Law", "Management", "Arts"],
       ranking: "#6 in India",
       students: "28,000+", 
-      image: "🕌"
+      logo: "https://upload.wikimedia.org/wikipedia/en/c/c7/Aligarh_Muslim_University_logo.png",
+      featured: true
     },
     {
-      name: "Pondicherry University",
-      location: "Puducherry",
-      state: "Puducherry",
-      established: 1985,
+      name: "Jamia Millia Islamia",
+      location: "New Delhi",
+      state: "Delhi", 
+      established: 1920,
       courses: ["BA", "BSc", "BTech", "MA", "MSc", "MTech", "PhD"],
-      specializations: ["Engineering", "Management", "Sciences", "Humanities"],
-      ranking: "#15 in India",
-      students: "9,000+",
-      image: "🌴"
+      specializations: ["Engineering", "Humanities", "Social Sciences", "Mass Communication"],
+      ranking: "#7 in India",
+      students: "15,000+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/f/f7/Jamia_Millia_Islamia_logo.png",
+      featured: true
     },
     {
       name: "University of Hyderabad",
@@ -82,7 +78,44 @@ const Universities = () => {
       specializations: ["Sciences", "Social Sciences", "Humanities", "Management"],
       ranking: "#12 in India",
       students: "5,000+",
-      image: "🏛️"
+      logo: "https://upload.wikimedia.org/wikipedia/en/6/6b/University_of_Hyderabad_logo.png",
+      featured: true
+    },
+    {
+      name: "Pondicherry University",
+      location: "Puducherry",
+      state: "Puducherry",
+      established: 1985,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "MTech", "PhD"],
+      specializations: ["Engineering", "Management", "Sciences", "Humanities"],
+      ranking: "#15 in India",
+      students: "9,000+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/4/45/Pondicherry_University_logo.png",
+      featured: true
+    },
+    {
+      name: "Babasaheb Bhimrao Ambedkar University",
+      location: "Lucknow",
+      state: "Uttar Pradesh",
+      established: 1996,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Engineering", "Management", "Sciences", "Social Sciences"],
+      ranking: "#18 in India",
+      students: "12,000+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/1/1e/BBAU_logo.png",
+      featured: true
+    },
+    {
+      name: "Assam University",
+      location: "Silchar",
+      state: "Assam",
+      established: 1994,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Technology", "Sciences", "Languages", "Management"],
+      ranking: "#22 in India",
+      students: "15,000+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/8/8a/Assam_University_logo.png",
+      featured: true
     },
     {
       name: "Tezpur University",
@@ -93,7 +126,21 @@ const Universities = () => {
       specializations: ["Engineering", "Sciences", "Management", "Humanities"],
       ranking: "#25 in India",
       students: "3,500+",
-      image: "🌿"
+      logo: "https://upload.wikimedia.org/wikipedia/en/6/65/Tezpur_University_logo.png",
+      featured: true
+    },
+    // Additional Central Universities
+    {
+      name: "Rajiv Gandhi University",
+      location: "Rono Hills",
+      state: "Arunachal Pradesh",
+      established: 1985,
+      courses: ["BA", "BSc", "BCom", "MA", "MSc", "PhD"],
+      specializations: ["Arts", "Sciences", "Management", "Law"],
+      ranking: "#35 in India",
+      students: "8,000+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/9/90/Rajiv_Gandhi_University_logo.png",
+      featured: false
     },
     {
       name: "Manipur University",
@@ -102,9 +149,10 @@ const Universities = () => {
       established: 1980,
       courses: ["BA", "BSc", "BCom", "MA", "MSc", "PhD"],
       specializations: ["Arts", "Sciences", "Commerce", "Social Work"],
-      ranking: "#35 in India",
+      ranking: "#38 in India",
       students: "25,000+",
-      image: "⛰️"
+      logo: "https://upload.wikimedia.org/wikipedia/en/5/58/Manipur_University_logo.png",
+      featured: false
     },
     {
       name: "Mizoram University",
@@ -115,7 +163,8 @@ const Universities = () => {
       specializations: ["Liberal Arts", "Sciences", "Management", "Education"],
       ranking: "#40 in India", 
       students: "7,000+",
-      image: "🏔️"
+      logo: "https://upload.wikimedia.org/wikipedia/en/3/33/Mizoram_University_logo.png",
+      featured: false
     },
     {
       name: "Nagaland University",
@@ -126,7 +175,8 @@ const Universities = () => {
       specializations: ["Arts", "Sciences", "Commerce", "Education"],
       ranking: "#42 in India",
       students: "12,000+", 
-      image: "🌲"
+      logo: "https://upload.wikimedia.org/wikipedia/en/a/a5/Nagaland_University_logo.png",
+      featured: false
     },
     {
       name: "Tripura University",
@@ -135,9 +185,10 @@ const Universities = () => {
       established: 1987,
       courses: ["BA", "BSc", "BCom", "MA", "MSc", "PhD"],
       specializations: ["Arts", "Sciences", "Commerce", "Management"],
-      ranking: "#38 in India",
+      ranking: "#45 in India",
       students: "75,000+",
-      image: "🌺"
+      logo: "https://upload.wikimedia.org/wikipedia/en/e/e4/Tripura_University_logo.png",
+      featured: false
     },
     {
       name: "Sikkim University",
@@ -146,9 +197,10 @@ const Universities = () => {
       established: 2007,
       courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
       specializations: ["Technology", "Sciences", "Buddhism Studies", "Management"],
-      ranking: "#45 in India",
+      ranking: "#48 in India",
       students: "3,000+",
-      image: "🏔️"
+      logo: "https://upload.wikimedia.org/wikipedia/en/0/0d/Sikkim_University_logo.png",
+      featured: false
     },
     {
       name: "Hemvati Nandan Bahuguna Garhwal University",
@@ -157,20 +209,178 @@ const Universities = () => {
       established: 1973,
       courses: ["BA", "BSc", "BCom", "MA", "MSc", "PhD"],
       specializations: ["Arts", "Sciences", "Commerce", "Rural Technology"],
-      ranking: "#30 in India",
+      ranking: "#50 in India",
       students: "50,000+",
-      image: "⛰️"
+      logo: "https://upload.wikimedia.org/wikipedia/en/7/76/HNB_Garhwal_University_logo.png",
+      featured: false
     },
     {
-      name: "Rajiv Gandhi University",
-      location: "Rono Hills",
-      state: "Arunachal Pradesh",
+      name: "Indira Gandhi National Open University",
+      location: "New Delhi",
+      state: "Delhi",
       established: 1985,
-      courses: ["BA", "BSc", "BCom", "MA", "MSc", "PhD"],
-      specializations: ["Arts", "Sciences", "Management", "Law"],
-      ranking: "#50 in India",
-      students: "8,000+",
-      image: "🌲"
+      courses: ["BA", "BSc", "BCom", "MA", "MSc", "MBA", "PhD"],
+      specializations: ["Distance Education", "Management", "Sciences", "Arts"],
+      ranking: "#52 in India",
+      students: "3,000,000+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/6/65/IGNOU_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Rajasthan",
+      location: "Ajmer",
+      state: "Rajasthan",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Technology", "Sciences", "Humanities", "Management"],
+      ranking: "#55 in India",
+      students: "4,500+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/5/50/Central_University_of_Rajasthan_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Gujarat",
+      location: "Gandhinagar",
+      state: "Gujarat",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Technology", "Management", "Sciences", "Arts"],
+      ranking: "#58 in India",
+      students: "3,800+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/8/8a/Central_University_of_Gujarat_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Haryana",
+      location: "Mahendragarh",
+      state: "Haryana",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Engineering", "Management", "Sciences", "Humanities"],
+      ranking: "#60 in India",
+      students: "4,200+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/f/f5/Central_University_of_Haryana_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Kashmir",
+      location: "Srinagar",
+      state: "Jammu and Kashmir",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Sciences", "Arts", "Technology", "Management"],
+      ranking: "#62 in India",
+      students: "3,500+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/d/d1/Central_University_of_Kashmir_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Punjab",
+      location: "Bathinda",
+      state: "Punjab",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Technology", "Sciences", "Management", "Arts"],
+      ranking: "#65 in India",
+      students: "4,000+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/7/71/Central_University_of_Punjab_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Karnataka",
+      location: "Kalaburagi",
+      state: "Karnataka",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Engineering", "Sciences", "Arts", "Management"],
+      ranking: "#68 in India",
+      students: "3,600+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/a/a2/Central_University_of_Karnataka_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Kerala",
+      location: "Kasaragod",
+      state: "Kerala",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Sciences", "Technology", "Arts", "Management"],
+      ranking: "#70 in India",
+      students: "3,200+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/9/92/Central_University_of_Kerala_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Tamil Nadu",
+      location: "Thiruvarur",
+      state: "Tamil Nadu",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Technology", "Sciences", "Arts", "Management"],
+      ranking: "#72 in India",
+      students: "3,400+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/1/16/Central_University_of_Tamil_Nadu_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Bihar",
+      location: "Gaya",
+      state: "Bihar",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Technology", "Sciences", "Arts", "Management"],
+      ranking: "#75 in India",
+      students: "4,800+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/2/29/Central_University_of_Bihar_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Jharkhand",
+      location: "Ranchi",
+      state: "Jharkhand",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Technology", "Sciences", "Arts", "Management"],
+      ranking: "#78 in India",
+      students: "4,100+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/4/4e/Central_University_of_Jharkhand_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of Odisha",
+      location: "Koraput",
+      state: "Odisha",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Technology", "Sciences", "Arts", "Management"],
+      ranking: "#80 in India",
+      students: "3,700+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/c/c6/Central_University_of_Odisha_logo.png",
+      featured: false
+    },
+    {
+      name: "Central University of South Bihar",
+      location: "Panchanpur",
+      state: "Bihar",
+      established: 2009,
+      courses: ["BA", "BSc", "BTech", "MA", "MSc", "PhD"],
+      specializations: ["Technology", "Sciences", "Arts", "Management"],
+      ranking: "#82 in India",
+      students: "3,900+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/8/85/Central_University_of_South_Bihar_logo.png",
+      featured: false
+    },
+    {
+      name: "Dr. Harisingh Gour University",
+      location: "Sagar",
+      state: "Madhya Pradesh",
+      established: 1946,
+      courses: ["BA", "BSc", "BTech", "MBBS", "MA", "MSc", "PhD"],
+      specializations: ["Medicine", "Engineering", "Sciences", "Arts"],
+      ranking: "#85 in India",
+      students: "35,000+",
+      logo: "https://upload.wikimedia.org/wikipedia/en/b/bb/Dr._Harisingh_Gour_University_logo.png",
+      featured: false
     }
   ];
 
@@ -183,6 +393,13 @@ const Universities = () => {
                          uni.specializations.some(spec => spec.toLowerCase().includes(searchTerm.toLowerCase()));
     return matchesState && matchesSearch;
   });
+
+  // Separate featured and additional universities
+  const featuredUniversities = filteredUniversities.filter(uni => uni.featured);
+  const additionalUniversities = filteredUniversities.filter(uni => !uni.featured);
+  const displayedUniversities = showAllUniversities 
+    ? filteredUniversities 
+    : featuredUniversities;
 
   const handleWhatsAppClick = (universityName: string) => {
     const message = `Hi, I'm interested in admission guidance for ${universityName}. Please provide more details about CUET preparation.`;
@@ -238,14 +455,26 @@ const Universities = () => {
 
         {/* Universities Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredUniversities.map((university, index) => (
+          {displayedUniversities.map((university, index) => (
             <div 
               key={index}
               className="bg-white rounded-2xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 hover:scale-105 border border-gray-100 overflow-hidden"
             >
               {/* University Header */}
               <div className="bg-gradient-to-r from-mentrr-navy to-blue-800 p-6 text-white">
-                <div className="text-4xl mb-3">{university.image}</div>
+                <div className="w-16 h-16 mb-3 mx-auto bg-white rounded-full flex items-center justify-center">
+                  <img 
+                    src={university.logo} 
+                    alt={`${university.name} logo`}
+                    className="w-12 h-12 object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.nextElementSibling!.textContent = '🏛️';
+                    }}
+                  />
+                  <span className="text-2xl text-mentrr-navy hidden">🏛️</span>
+                </div>
                 <h3 className="text-xl font-bold mb-2">{university.name}</h3>
                 <div className="flex items-center text-blue-100 text-sm">
                   <MapPin className="h-4 w-4 mr-1" />
@@ -332,6 +561,36 @@ const Universities = () => {
           ))}
         </div>
 
+        {/* Show More Button */}
+        {!showAllUniversities && additionalUniversities.length > 0 && (
+          <div className="text-center mt-12">
+            <Button 
+              variant="mentrr-outline" 
+              size="lg"
+              onClick={() => setShowAllUniversities(true)}
+              className="px-8 py-4"
+            >
+              <ChevronDown className="mr-2 h-5 w-5" />
+              Show All {additionalUniversities.length} More Universities
+            </Button>
+          </div>
+        )}
+
+        {/* Show Less Button */}
+        {showAllUniversities && (
+          <div className="text-center mt-12">
+            <Button 
+              variant="mentrr-outline" 
+              size="lg"
+              onClick={() => setShowAllUniversities(false)}
+              className="px-8 py-4"
+            >
+              <ChevronUp className="mr-2 h-5 w-5" />
+              Show Less - Top 10 Universities Only
+            </Button>
+          </div>
+        )}
+
         {/* CTA Section */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-mentrr-navy to-blue-800 rounded-2xl p-8 text-white">
@@ -359,7 +618,7 @@ const Universities = () => {
         </div>
 
         {/* Results Display */}
-        {filteredUniversities.length === 0 && (
+        {displayedUniversities.length === 0 && (
           <div className="text-center py-12">
             <div className="text-gray-400 text-lg mb-2">No universities found</div>
             <p className="text-gray-500">Try adjusting your search criteria</p>
