@@ -15,7 +15,16 @@ const Hero = () => {
   };
 
   const handleStartJourney = () => {
-    document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
+    const coursesSection = document.getElementById('courses');
+    if (coursesSection) {
+      coursesSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback - scroll to courses section using querySelector
+      const coursesElement = document.querySelector('#courses');
+      if (coursesElement) {
+        coursesElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
