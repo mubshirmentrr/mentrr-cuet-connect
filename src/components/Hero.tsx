@@ -15,15 +15,21 @@ const Hero = () => {
   };
 
   const handleStartJourney = () => {
+    console.log('Start Journey button clicked');
     const coursesSection = document.getElementById('courses');
+    console.log('Courses section found:', coursesSection);
     if (coursesSection) {
-      coursesSection.scrollIntoView({ behavior: 'smooth' });
+      coursesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
-      // Fallback - scroll to courses section using querySelector
-      const coursesElement = document.querySelector('#courses');
-      if (coursesElement) {
-        coursesElement.scrollIntoView({ behavior: 'smooth' });
-      }
+      console.log('Courses section not found, trying alternative method');
+      // Force scroll to courses section
+      setTimeout(() => {
+        const coursesElement = document.querySelector('[id="courses"]');
+        console.log('Alternative courses element:', coursesElement);
+        if (coursesElement) {
+          coursesElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     }
   };
 
@@ -74,38 +80,90 @@ const Hero = () => {
                 variant="mentrr-outline" 
                 size="lg" 
                 className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white hover:text-mentrr-navy"
-                onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => {
+                  console.log('View Success Stories button clicked');
+                  const testimonialsSection = document.getElementById('testimonials');
+                  console.log('Testimonials section found:', testimonialsSection);
+                  if (testimonialsSection) {
+                    testimonialsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  } else {
+                    setTimeout(() => {
+                      const testimonialsElement = document.querySelector('[id="testimonials"]');
+                      console.log('Alternative testimonials element:', testimonialsElement);
+                      if (testimonialsElement) {
+                        testimonialsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }, 100);
+                  }
+                }}
               >
                 View Success Stories
               </Button>
             </div>
 
             {/* PYQ Lead Magnet */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+            <div className="bg-gradient-to-r from-white/15 to-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/30 transition-all duration-300">
               <div className="text-center space-y-4">
-                <h3 className="text-xl font-semibold text-white">🎯 FREE: CUET Question Bank</h3>
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <div className="w-2 h-2 bg-mentrr-green rounded-full animate-pulse"></div>
+                  <h3 className="text-xl font-semibold text-white">🎯 FREE: CUET Question Bank</h3>
+                  <div className="w-2 h-2 bg-mentrr-green rounded-full animate-pulse"></div>
+                </div>
                 <p className="text-gray-300 text-sm">Get 3 years of previous year questions with detailed solutions to boost your CUET preparation</p>
+                <div className="flex items-center justify-center gap-4 text-xs text-gray-400 mb-4">
+                  <span className="flex items-center gap-1">
+                    <div className="w-1 h-1 bg-mentrr-green rounded-full"></div>
+                    1000+ Questions
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <div className="w-1 h-1 bg-mentrr-green rounded-full"></div>
+                    Detailed Solutions
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <div className="w-1 h-1 bg-mentrr-green rounded-full"></div>
+                    Subject-wise
+                  </span>
+                </div>
                 <PYQLeadMagnet />
               </div>
             </div>
 
           </div>
 
-          {/* Right Content - Stats Grid */}
-          <div className="grid grid-cols-2 gap-6 animate-slide-up">
-            {stats.map((stat, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-2xl p-6 text-center border-2 border-mentrr-green/30 hover:border-mentrr-green transition-all duration-300 hover:scale-105 shadow-lg"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-mentrr-green/20 rounded-xl mb-4">
-                  <stat.icon className="h-6 w-6 text-mentrr-green" />
+          {/* Right Content - Enhanced Stats Grid */}
+          <div className="space-y-6 animate-slide-up">
+            {/* Quick Stats Banner */}
+            <div className="bg-gradient-to-r from-mentrr-green/20 to-emerald-500/20 backdrop-blur-sm rounded-2xl p-6 border border-mentrr-green/30 text-center">
+              <div className="text-white space-y-2">
+                <div className="text-3xl font-bold">4000+</div>
+                <div className="text-sm text-gray-300">Students Placed in Top Universities</div>
+                <div className="flex items-center justify-center gap-2 mt-3">
+                  <div className="flex space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-mentrr-yellow text-mentrr-yellow" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-300">4.9/5 Student Rating</span>
                 </div>
-                <div className="text-3xl font-bold text-mentrr-navy mb-2">{stat.value}</div>
-                <div className="text-gray-600 text-sm">{stat.label}</div>
               </div>
-            ))}
+            </div>
+            
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, index) => (
+                <div 
+                  key={index}
+                  className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 text-center border-2 border-mentrr-green/20 hover:border-mentrr-green/40 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl group"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-mentrr-green/20 to-mentrr-green/30 rounded-xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className="h-6 w-6 text-mentrr-green" />
+                  </div>
+                  <div className="text-2xl font-bold text-mentrr-navy mb-1 group-hover:text-mentrr-green transition-colors duration-300">{stat.value}</div>
+                  <div className="text-gray-600 text-xs font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
