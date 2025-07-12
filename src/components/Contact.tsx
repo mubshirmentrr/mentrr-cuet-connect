@@ -88,7 +88,7 @@ Message: ${formData.message || 'Please provide more details about the course.'}`
               {contactInfo.map((info, index) => (
                 <div 
                   key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                 >
                   <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg mb-4 ${info.color === 'text-mentrr-green' ? 'bg-mentrr-green/20' : info.color === 'text-mentrr-orange' ? 'bg-mentrr-orange/20' : info.color === 'text-mentrr-navy' ? 'bg-white/20' : 'bg-mentrr-yellow/20'}`}>
                     <info.icon className={`h-6 w-6 ${info.color === 'text-mentrr-navy' ? 'text-white' : info.color}`} />
