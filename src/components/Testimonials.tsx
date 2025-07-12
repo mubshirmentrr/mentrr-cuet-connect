@@ -67,7 +67,7 @@ const Testimonials = () => {
             </div>
             <div className="space-y-2">
               <Star className="h-12 w-12 mx-auto text-yellow-300" />
-              <div className="text-3xl font-bold">100%</div>
+              <div className="text-3xl font-bold">97.43%</div>
               <div className="text-green-100">Success Rate</div>
             </div>
           </div>

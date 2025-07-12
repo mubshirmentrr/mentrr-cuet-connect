@@ -90,7 +90,7 @@ const Footer = () => {
               <ul className="text-sm text-blue-100 space-y-1">
                 <li>• 4000+ Successful Students</li>
                 <li>• Kerala&apos;s #1 CUET Institute</li>
-                <li>• 100% Success Rate</li>
+                <li>• 97.43% Success Rate</li>
               </ul>
             </div>
           </div>

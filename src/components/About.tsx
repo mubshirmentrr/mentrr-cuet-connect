@@ -6,7 +6,7 @@ const About = () => {
     { icon: Users, number: "4000+", label: "Successful Students" },
     { icon: Award, number: "5", label: "Years of Excellence" },
     { icon: BookOpen, number: "3", label: "Exam Categories" },
-    { icon: Target, number: "100%", label: "Success Rate" }
+    { icon: Target, number: "97.43%", label: "Success Rate" }
   ];
 
   const features = [
