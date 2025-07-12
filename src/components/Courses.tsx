@@ -20,7 +20,7 @@ const Courses = () => {
       ],
       duration: "6-12 Months",
       students: "2500+ Students",
-      rating: "4.9/5",
+      
       price: "Starting from ₹15,000",
       image: "🎓",
       color: "from-mentrr-green to-emerald-500"
@@ -42,7 +42,7 @@ const Courses = () => {
       ],
       duration: "4-8 Months",
       students: "1200+ Students", 
-      rating: "4.8/5",
+      
       price: "Starting from ₹20,000",
       image: "📚",
       color: "from-mentrr-navy to-blue-600"
@@ -64,7 +64,7 @@ const Courses = () => {
       ],
       duration: "3-6 Months",
       students: "300+ Students",
-      rating: "4.7/5", 
+       
       price: "Starting from ₹12,000",
       image: "🏆",
       color: "from-mentrr-orange to-red-500"
@@ -137,19 +137,9 @@ const Courses = () => {
                   </div>
                 </div>
 
-                {/* Rating */}
-                <div className="flex items-center justify-between py-2">
-                  <div className="flex items-center space-x-2">
-                    <div className="flex space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-mentrr-yellow text-mentrr-yellow" />
-                      ))}
-                    </div>
-                    <span className="text-sm font-medium">{course.rating}</span>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-lg font-bold text-mentrr-navy">{course.price}</div>
-                  </div>
+                {/* Price */}
+                <div className="py-2 text-center">
+                  <div className="text-lg font-bold text-mentrr-navy">{course.price}</div>
                 </div>
 
                 {/* CTA Button */}
