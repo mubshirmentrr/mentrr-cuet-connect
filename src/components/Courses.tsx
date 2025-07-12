@@ -18,7 +18,7 @@ const Courses = () => {
         "Formula Sheet",
         "1:1 Personal Mentorship"
       ],
-      duration: "6-12 Months",
+      duration: "8-14 Months",
       students: "2500+ Students",
       
       price: "Starting from ₹15,000",
@@ -40,8 +40,8 @@ const Courses = () => {
         "Formula Sheet",
         "1:1 Personal Mentorship"
       ],
-      duration: "4-8 Months",
-      students: "1200+ Students", 
+      duration: "6-10 Months",
+      students: "1200+ Students",
       
       price: "Starting from ₹20,000",
       image: "📚",
@@ -62,7 +62,7 @@ const Courses = () => {
         "Formula Sheet",
         "1:1 Personal Mentorship"
       ],
-      duration: "3-6 Months",
+      duration: "4-7 Months",
       students: "300+ Students",
        
       price: "Starting from ₹12,000",
