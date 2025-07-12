@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle, Send, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -114,16 +114,23 @@ Message: ${formData.message || 'Please provide more details about the course.'}`
                 <a 
                   href="https://www.instagram.com/mentrr_learning/" 
                   target="_blank"
-                  className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-lg text-white hover:bg-mentrr-green hover:scale-110 transition-all duration-300"
+                  className="inline-flex items-center justify-center w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg text-white hover:bg-mentrr-green hover:scale-110 transition-all duration-300 border border-white/20"
                 >
                   📱
                 </a>
                 <a 
                   href="https://wa.me/917909228688" 
                   target="_blank"
-                  className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-lg text-white hover:bg-mentrr-green hover:scale-110 transition-all duration-300"
+                  className="inline-flex items-center justify-center w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg text-white hover:bg-mentrr-green hover:scale-110 transition-all duration-300 border border-white/20"
                 >
                   <MessageCircle className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://youtube.com/@mentrr_learning" 
+                  target="_blank"
+                  className="inline-flex items-center justify-center w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg text-white hover:bg-red-600 hover:scale-110 transition-all duration-300 border border-white/20"
+                >
+                  <Youtube className="h-6 w-6" />
                 </a>
               </div>
             </div>
