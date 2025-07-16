@@ -74,32 +74,6 @@ const Hero = () => {
               </Button>
             </div>
 
-            {/* PYQ Lead Magnet */}
-            <div className="bg-gradient-to-r from-white/15 to-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/30 transition-all duration-300">
-              <div className="text-center space-y-4">
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <div className="w-2 h-2 bg-mentrr-green rounded-full animate-pulse"></div>
-                  <h3 className="text-xl font-semibold text-white">🎯 FREE: CUET Question Bank</h3>
-                  <div className="w-2 h-2 bg-mentrr-green rounded-full animate-pulse"></div>
-                </div>
-                <p className="text-gray-300 text-sm">Get 3 years of previous year questions with detailed solutions to boost your CUET preparation</p>
-                <div className="flex items-center justify-center gap-4 text-xs text-gray-400 mb-4">
-                  <span className="flex items-center gap-1">
-                    <div className="w-1 h-1 bg-mentrr-green rounded-full"></div>
-                    1000+ Questions
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <div className="w-1 h-1 bg-mentrr-green rounded-full"></div>
-                    Detailed Solutions
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <div className="w-1 h-1 bg-mentrr-green rounded-full"></div>
-                    Subject-wise
-                  </span>
-                </div>
-                <PYQLeadMagnet />
-              </div>
-            </div>
 
           </div>
 
