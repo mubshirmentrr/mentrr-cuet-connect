@@ -18,7 +18,6 @@ const Courses = () => {
         "Formula Sheet",
         "1:1 Personal Mentorship"
       ],
-      duration: "8-14 Months",
       students: "2500+ Students",
       
       price: "Starting from ₹15,000",
@@ -40,7 +39,6 @@ const Courses = () => {
         "Formula Sheet",
         "1:1 Personal Mentorship"
       ],
-      duration: "6-10 Months",
       students: "1200+ Students",
       
       price: "Starting from ₹20,000",
@@ -62,12 +60,31 @@ const Courses = () => {
         "Formula Sheet",
         "1:1 Personal Mentorship"
       ],
-      duration: "4-7 Months",
       students: "300+ Students",
        
       price: "Starting from ₹12,000",
       image: "🏆",
       color: "from-mentrr-orange to-red-500"
+    },
+    {
+      title: "NET/JRF",
+      subtitle: "National Eligibility Test / Junior Research Fellowship",
+      description: "Comprehensive preparation for NET/JRF with research methodology and subject-specific training.",
+      features: [
+        "Top Educators - Live and recorded classes",
+        "Class notes & Chapter wise Value Added Notes",
+        "Subject-wise Mock Tests",
+        "Research Methodology Training",
+        "Previous Year Question Papers",
+        "PYQ mock tests",
+        "Current Affairs Updates",
+        "Interview Preparation",
+        "1:1 Personal Mentorship"
+      ],
+      students: "800+ Students",
+      price: "Starting from ₹18,000",
+      image: "🎓",
+      color: "from-mentrr-purple to-purple-600"
     }
   ];
 
@@ -84,16 +101,16 @@ const Courses = () => {
           <div className="inline-flex items-center px-4 py-2 bg-mentrr-green/10 text-mentrr-green rounded-full text-sm font-medium mb-4">
             📖 Our Courses
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-mentrr-navy mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-mentrr-navy mb-6">
             Choose Your <span className="text-mentrr-green">Success Path</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive coaching programs designed to help you crack CUET UG, CUET PG, and NCET with confidence and achieve your dream university admission.
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive coaching programs designed to help you crack CUET UG, CUET PG, NCET, and NET/JRF with confidence and achieve your dream university admission.
           </p>
         </div>
 
         {/* Courses Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
           {courses.map((course, index) => (
             <div 
               key={index}
@@ -124,14 +141,9 @@ const Courses = () => {
                 </div>
 
                 {/* Course Stats */}
-                <div className="grid grid-cols-2 gap-4 py-4 border-t border-gray-100">
-                  <div className="text-center">
-                    <Clock className="h-5 w-5 text-mentrr-orange mx-auto mb-1" />
-                    <div className="text-sm font-medium text-mentrr-navy">{course.duration}</div>
-                    <div className="text-xs text-gray-500">Duration</div>
-                  </div>
-                  <div className="text-center">
-                    <Users className="h-5 w-5 text-mentrr-green mx-auto mb-1" />
+                <div className="py-4 border-t border-gray-100 text-center">
+                  <div className="inline-flex items-center justify-center space-x-2">
+                    <Users className="h-5 w-5 text-mentrr-green" />
                     <div className="text-sm font-medium text-mentrr-navy">{course.students}</div>
                     <div className="text-xs text-gray-500">Enrolled</div>
                   </div>
@@ -159,40 +171,40 @@ const Courses = () => {
         {/* Additional Benefits */}
         <div className="bg-gradient-to-r from-mentrr-light-blue to-blue-50 rounded-2xl p-8">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-mentrr-navy mb-4">Why Choose Mentrr Learning?</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-mentrr-navy mb-4">Why Choose Mentrr Learning?</h3>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 bg-mentrr-green/20 rounded-xl flex items-center justify-center mx-auto">
-                <BookOpen className="h-8 w-8 text-mentrr-green" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div className="text-center space-y-2 md:space-y-3">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-mentrr-green/20 rounded-xl flex items-center justify-center mx-auto">
+                <BookOpen className="h-6 w-6 md:h-8 md:w-8 text-mentrr-green" />
               </div>
-              <h4 className="font-semibold text-mentrr-navy">Expert Faculty</h4>
-              <p className="text-gray-600 text-sm">Experienced teachers with proven track record</p>
+              <h4 className="font-semibold text-mentrr-navy text-sm md:text-base">Expert Faculty</h4>
+              <p className="text-gray-600 text-xs md:text-sm">Experienced teachers with proven track record</p>
             </div>
             
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 bg-mentrr-orange/20 rounded-xl flex items-center justify-center mx-auto">
-                <Users className="h-8 w-8 text-mentrr-orange" />
+            <div className="text-center space-y-2 md:space-y-3">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-mentrr-orange/20 rounded-xl flex items-center justify-center mx-auto">
+                <Users className="h-6 w-6 md:h-8 md:w-8 text-mentrr-orange" />
               </div>
-              <h4 className="font-semibold text-mentrr-navy">Small Batches</h4>
-              <p className="text-gray-600 text-sm">Personalized attention for every student</p>
+              <h4 className="font-semibold text-mentrr-navy text-sm md:text-base">Small Batches</h4>
+              <p className="text-gray-600 text-xs md:text-sm">Personalized attention for every student</p>
             </div>
             
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 bg-mentrr-navy/20 rounded-xl flex items-center justify-center mx-auto">
-                <CheckCircle className="h-8 w-8 text-mentrr-navy" />
+            <div className="text-center space-y-2 md:space-y-3">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-mentrr-navy/20 rounded-xl flex items-center justify-center mx-auto">
+                <CheckCircle className="h-6 w-6 md:h-8 md:w-8 text-mentrr-navy" />
               </div>
-              <h4 className="font-semibold text-mentrr-navy">Proven Results</h4>
-              <p className="text-gray-600 text-sm">4000+ successful admissions</p>
+              <h4 className="font-semibold text-mentrr-navy text-sm md:text-base">Proven Results</h4>
+              <p className="text-gray-600 text-xs md:text-sm">4000+ successful admissions</p>
             </div>
             
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 bg-mentrr-yellow/20 rounded-xl flex items-center justify-center mx-auto">
-                <Star className="h-8 w-8 text-mentrr-yellow" />
+            <div className="text-center space-y-2 md:space-y-3">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-mentrr-yellow/20 rounded-xl flex items-center justify-center mx-auto">
+                <Star className="h-6 w-6 md:h-8 md:w-8 text-mentrr-yellow" />
               </div>
-              <h4 className="font-semibold text-mentrr-navy">Quality Material</h4>
-              <p className="text-gray-600 text-sm">Comprehensive study resources</p>
+              <h4 className="font-semibold text-mentrr-navy text-sm md:text-base">Quality Material</h4>
+              <p className="text-gray-600 text-xs md:text-sm">Comprehensive study resources</p>
             </div>
           </div>
         </div>

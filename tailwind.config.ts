@@ -29,6 +29,7 @@ export default {
 				'mentrr-orange': 'hsl(var(--mentrr-orange))',
 				'mentrr-yellow': 'hsl(var(--mentrr-yellow))',
 				'mentrr-light-blue': 'hsl(var(--mentrr-light-blue))',
+				'mentrr-purple': 'hsl(var(--mentrr-purple))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

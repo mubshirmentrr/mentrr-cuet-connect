@@ -394,12 +394,11 @@ const Universities = () => {
     return matchesState && matchesSearch;
   });
 
-  // Separate featured and additional universities
-  const featuredUniversities = filteredUniversities.filter(uni => uni.featured);
-  const additionalUniversities = filteredUniversities.filter(uni => !uni.featured);
+  // Show top 7 universities initially
+  const top7Universities = filteredUniversities.slice(0, 7);
   const displayedUniversities = showAllUniversities 
     ? filteredUniversities 
-    : featuredUniversities;
+    : top7Universities;
 
   const handleWhatsAppClick = (universityName: string) => {
     const message = `Hi, I'm interested in admission guidance for ${universityName}. Please provide more details about CUET preparation.`;
@@ -414,9 +413,9 @@ const Universities = () => {
           <div className="inline-flex items-center px-4 py-2 bg-mentrr-navy/10 text-mentrr-navy rounded-full text-sm font-medium mb-4">
             🏛️ Central Universities
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-mentrr-navy mb-6">
-            Top <span className="text-mentrr-green">Central Universities</span> in India
-          </h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-mentrr-navy mb-6">
+              Top <span className="text-mentrr-green">Central Universities</span> in India
+            </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore admission opportunities in India&apos;s premier central universities. Our CUET coaching helps you secure seats in these prestigious institutions.
           </p>
@@ -562,7 +561,7 @@ const Universities = () => {
         </div>
 
         {/* Show More Button */}
-        {!showAllUniversities && additionalUniversities.length > 0 && (
+        {!showAllUniversities && filteredUniversities.length > 7 && (
           <div className="text-center mt-12">
             <Button 
               variant="mentrr-outline" 
@@ -571,7 +570,7 @@ const Universities = () => {
               className="px-8 py-4"
             >
               <ChevronDown className="mr-2 h-5 w-5" />
-              Show All {additionalUniversities.length} More Universities
+              Show All {filteredUniversities.length - 7} More Universities
             </Button>
           </div>
         )}
@@ -586,7 +585,7 @@ const Universities = () => {
               className="px-8 py-4"
             >
               <ChevronUp className="mr-2 h-5 w-5" />
-              Show Less - Top 10 Universities Only
+              Show Top 7 Universities Only
             </Button>
           </div>
         )}

@@ -55,7 +55,7 @@ const Hero = () => {
                 Crack CUET with Confidence
                 <br />
                 <span className="text-mentrr-green">
-                  Only at Mentrr
+                  with Mentrr
                 </span>
               </h1>
               

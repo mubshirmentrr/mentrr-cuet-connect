@@ -15,6 +15,7 @@
     --mentrr-orange: 15 85% 55%;
     --mentrr-yellow: 55 100% 50%;
     --mentrr-light-blue: 215 100% 96%;
+    --mentrr-purple: 260 100% 40%;
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--mentrr-navy)), hsl(220 54% 20%));
