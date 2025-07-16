@@ -51,16 +51,13 @@ const Hero = () => {
                 🏆 Kerala&apos;s #1 CUET Coaching Institute
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                Crack CUET with Confidence
-                <br />
-                <span className="text-mentrr-green">
-                  with Mentrr
-                </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+                Crack CUET with 
+                <span className="text-mentrr-green"> Kerala's #1 CUET Coaching Institution</span>
               </h1>
               
-              <p className="text-xl text-gray-300 max-w-lg">
-                Join 4000+ students who got into their dream colleges with our proven CUET coaching. We make CUET preparation simple, effective, and stress-free with expert guidance and smart study plans.
+              <p className="text-lg sm:text-xl text-gray-300 max-w-2xl">
+                Join 4000+ students who cracked CUET with expert guidance and proven strategies.
               </p>
             </div>
 
@@ -69,35 +66,11 @@ const Hero = () => {
               <Button 
                 variant="hero" 
                 size="lg" 
-                className="text-lg px-8 py-4"
+                className="text-lg px-8 py-4 w-full sm:w-auto"
                 onClick={handleStartJourney}
               >
                 Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              
-              <Button 
-                variant="mentrr-outline" 
-                size="lg" 
-                className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white hover:text-mentrr-navy"
-                onClick={() => {
-                  console.log('View Success Stories button clicked');
-                  const testimonialsSection = document.getElementById('testimonials');
-                  console.log('Testimonials section found:', testimonialsSection);
-                  if (testimonialsSection) {
-                    testimonialsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  } else {
-                    setTimeout(() => {
-                      const testimonialsElement = document.querySelector('[id="testimonials"]');
-                      console.log('Alternative testimonials element:', testimonialsElement);
-                      if (testimonialsElement) {
-                        testimonialsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }
-                    }, 100);
-                  }
-                }}
-              >
-                View Success Stories
               </Button>
             </div>
 
