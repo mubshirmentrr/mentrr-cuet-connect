@@ -140,7 +140,17 @@ const Courses = () => {
                 </div>
 
                 {/* CTA Button */}
-                <PYQLeadMagnet />
+                <Button 
+                  variant="mentrr" 
+                  className="w-full"
+                  onClick={() => {
+                    const message = `Hi, I'm interested in the ${course.title} course. Please provide more details.`;
+                    window.open(`https://wa.me/917909228688?text=${encodeURIComponent(message)}`, "_blank");
+                  }}
+                >
+                  Join Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </div>
             </div>
           ))}

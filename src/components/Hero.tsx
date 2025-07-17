@@ -53,7 +53,7 @@ const Hero = () => {
               
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
                 Crack CUET with 
-                <span className="text-mentrr-green"> Kerala's #1 CUET Coaching Institution</span>
+                <span className="text-mentrr-green">Kerala's #1</span> CUET Coaching Institution
               </h1>
               
               <p className="text-lg sm:text-xl text-gray-300 max-w-2xl">
