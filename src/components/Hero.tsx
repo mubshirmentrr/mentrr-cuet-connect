@@ -72,40 +72,21 @@ const Hero = () => {
 
           </div>
 
-          {/* Right Content - Enhanced Stats Grid */}
-          <div className="space-y-6 animate-slide-up">
-            {/* Quick Stats Banner */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20 text-center shadow-lg">
-              <div className="text-white space-y-3">
-                <div className="text-2xl sm:text-3xl font-bold">4000+</div>
-                <div className="text-xs sm:text-sm text-gray-200 leading-tight">Students Placed in Top Universities</div>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mt-3">
-                  <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-mentrr-yellow text-mentrr-yellow" />
-                    ))}
-                  </div>
-                  <span className="text-xs sm:text-sm text-gray-200">4.9/5 Student Rating</span>
+          {/* Right Content - Stats Grid */}
+          <div className="grid grid-cols-2 gap-4 animate-slide-up">
+            {stats.map((stat, index) => (
+              <div 
+                key={index}
+                className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 text-center border-2 border-mentrr-green/20 hover:border-mentrr-green/40 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl group"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-mentrr-green/20 to-mentrr-green/30 rounded-xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="h-6 w-6 text-mentrr-green" />
                 </div>
+                <div className="text-2xl font-bold text-mentrr-navy mb-1 group-hover:text-mentrr-green transition-colors duration-300">{stat.value}</div>
+                <div className="text-gray-600 text-xs font-medium">{stat.label}</div>
               </div>
-            </div>
-            
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat, index) => (
-                <div 
-                  key={index}
-                  className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 text-center border-2 border-mentrr-green/20 hover:border-mentrr-green/40 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl group"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-mentrr-green/20 to-mentrr-green/30 rounded-xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                    <stat.icon className="h-6 w-6 text-mentrr-green" />
-                  </div>
-                  <div className="text-2xl font-bold text-mentrr-navy mb-1 group-hover:text-mentrr-green transition-colors duration-300">{stat.value}</div>
-                  <div className="text-gray-600 text-xs font-medium">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>

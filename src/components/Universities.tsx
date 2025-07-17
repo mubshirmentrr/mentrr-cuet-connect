@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MapPin, GraduationCap, BookOpen, Users, Search, Filter, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { universityLogos } from "@/assets/university-logos";
 
 const Universities = () => {
   const [selectedState, setSelectedState] = useState("All");
@@ -394,11 +395,13 @@ const Universities = () => {
     return matchesState && matchesSearch;
   });
 
-  // Show top 7 universities initially
-  const top7Universities = filteredUniversities.slice(0, 7);
+  // Separate featured and non-featured universities
+  const featuredUniversities = filteredUniversities.filter(uni => uni.featured);
+  const nonFeaturedUniversities = filteredUniversities.filter(uni => !uni.featured);
+  
   const displayedUniversities = showAllUniversities 
-    ? filteredUniversities 
-    : top7Universities;
+    ? [...featuredUniversities, ...nonFeaturedUniversities]
+    : featuredUniversities;
 
   const handleWhatsAppClick = (universityName: string) => {
     const message = `Hi, I'm interested in admission guidance for ${universityName}. Please provide more details about CUET preparation.`;
@@ -462,17 +465,15 @@ const Universities = () => {
               {/* University Header */}
               <div className="bg-gradient-to-r from-mentrr-navy to-blue-800 p-6 text-white">
                 <div className="w-16 h-16 mb-3 mx-auto bg-white rounded-full flex items-center justify-center">
-                  <img 
-                    src={university.logo} 
-                    alt={`${university.name} logo`}
-                    className="w-12 h-12 object-contain"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      target.nextElementSibling!.textContent = '🏛️';
-                    }}
-                  />
-                  <span className="text-2xl text-mentrr-navy hidden">🏛️</span>
+                  {universityLogos[university.name as keyof typeof universityLogos] ? (
+                    <img 
+                      src={universityLogos[university.name as keyof typeof universityLogos]} 
+                      alt={`${university.name} logo`}
+                      className="w-12 h-12 object-contain rounded-full"
+                    />
+                  ) : (
+                    <span className="text-2xl text-mentrr-navy">🏛️</span>
+                  )}
                 </div>
                 <h3 className="text-xl font-bold mb-2">{university.name}</h3>
                 <div className="flex items-center text-blue-100 text-sm">
@@ -561,7 +562,7 @@ const Universities = () => {
         </div>
 
         {/* Show More Button */}
-        {!showAllUniversities && filteredUniversities.length > 7 && (
+        {!showAllUniversities && nonFeaturedUniversities.length > 0 && (
           <div className="text-center mt-12">
             <Button 
               variant="mentrr-outline" 
@@ -570,7 +571,7 @@ const Universities = () => {
               className="px-8 py-4"
             >
               <ChevronDown className="mr-2 h-5 w-5" />
-              Show All {filteredUniversities.length - 7} More Universities
+              Show All {nonFeaturedUniversities.length} More Universities
             </Button>
           </div>
         )}
@@ -585,7 +586,7 @@ const Universities = () => {
               className="px-8 py-4"
             >
               <ChevronUp className="mr-2 h-5 w-5" />
-              Show Top 7 Universities Only
+              Show Featured Universities Only
             </Button>
           </div>
         )}
