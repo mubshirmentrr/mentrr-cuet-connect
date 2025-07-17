@@ -47,13 +47,8 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
-              <div className="inline-flex items-center px-4 py-2 bg-mentrr-green/20 text-mentrr-green rounded-full text-sm font-medium border border-mentrr-green/30">
-                🏆 with <span className="text-mentrr-green">Mentrr</span>
-              </div>
-              
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
-                Crack CUET with 
-                <span className="text-mentrr-green">Kerala's #1</span> CUET Coaching Institution
+                Crack CUET with <span className="text-mentrr-green">Kerala's #1</span> CUET Coaching Institution
               </h1>
               
               <p className="text-lg sm:text-xl text-gray-300 max-w-2xl">
@@ -80,17 +75,17 @@ const Hero = () => {
           {/* Right Content - Enhanced Stats Grid */}
           <div className="space-y-6 animate-slide-up">
             {/* Quick Stats Banner */}
-            <div className="bg-gradient-to-r from-mentrr-green/20 to-emerald-500/20 backdrop-blur-sm rounded-2xl p-6 border border-mentrr-green/30 text-center">
-              <div className="text-white space-y-2">
-                <div className="text-3xl font-bold">4000+</div>
-                <div className="text-sm text-gray-300">Students Placed in Top Universities</div>
-                <div className="flex items-center justify-center gap-2 mt-3">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20 text-center shadow-lg">
+              <div className="text-white space-y-3">
+                <div className="text-2xl sm:text-3xl font-bold">4000+</div>
+                <div className="text-xs sm:text-sm text-gray-200 leading-tight">Students Placed in Top Universities</div>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mt-3">
                   <div className="flex space-x-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-mentrr-yellow text-mentrr-yellow" />
+                      <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-mentrr-yellow text-mentrr-yellow" />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-300">4.9/5 Student Rating</span>
+                  <span className="text-xs sm:text-sm text-gray-200">4.9/5 Student Rating</span>
                 </div>
               </div>
             </div>
