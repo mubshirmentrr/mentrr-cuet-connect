@@ -1,5 +1,6 @@
 import { BookOpen, Clock, Users, CheckCircle, Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import PYQLeadMagnet from "./PYQLeadMagnet";
 
 const Courses = () => {
   const courses = [
@@ -19,8 +20,6 @@ const Courses = () => {
         "1:1 Personal Mentorship"
       ],
       students: "2500+ Students",
-      
-      price: "Starting from ₹15,000",
       image: "🎓",
       color: "from-mentrr-green to-emerald-500"
     },
@@ -40,8 +39,6 @@ const Courses = () => {
         "1:1 Personal Mentorship"
       ],
       students: "1200+ Students",
-      
-      price: "Starting from ₹20,000",
       image: "📚",
       color: "from-mentrr-navy to-blue-600"
     },
@@ -61,8 +58,6 @@ const Courses = () => {
         "1:1 Personal Mentorship"
       ],
       students: "300+ Students",
-       
-      price: "Starting from ₹12,000",
       image: "🏆",
       color: "from-mentrr-orange to-red-500"
     },
@@ -82,16 +77,11 @@ const Courses = () => {
         "1:1 Personal Mentorship"
       ],
       students: "800+ Students",
-      price: "Starting from ₹18,000",
       image: "🎓",
       color: "from-mentrr-purple to-purple-600"
     }
   ];
 
-  const handleWhatsAppClick = (course: string) => {
-    const message = `Hi, I'm interested in the ${course} course. Please provide more details.`;
-    window.open(`https://wa.me/917909228688?text=${encodeURIComponent(message)}`, "_blank");
-  };
 
   return (
     <section id="courses" className="py-20 bg-white">
@@ -149,20 +139,8 @@ const Courses = () => {
                   </div>
                 </div>
 
-                {/* Price */}
-                <div className="py-2 text-center">
-                  <div className="text-lg font-bold text-mentrr-navy">{course.price}</div>
-                </div>
-
                 {/* CTA Button */}
-                <Button 
-                  variant="mentrr" 
-                  className="w-full"
-                  onClick={() => handleWhatsAppClick(course.title)}
-                >
-                  Enroll Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <PYQLeadMagnet />
               </div>
             </div>
           ))}

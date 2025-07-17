@@ -48,7 +48,7 @@ const Hero = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
               <div className="inline-flex items-center px-4 py-2 bg-mentrr-green/20 text-mentrr-green rounded-full text-sm font-medium border border-mentrr-green/30">
-                🏆 Kerala&apos;s #1 CUET Coaching Institute
+                🏆 with <span className="text-mentrr-green">Mentrr</span>
               </div>
               
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
