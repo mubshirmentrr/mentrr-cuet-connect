@@ -30,7 +30,7 @@ const Footer = () => {
                 className="h-10 w-auto mb-4"
               />
               <p className="text-blue-100 leading-relaxed">
-                Kerala&apos;s #1 CUET Coaching Institute with 4000+ successful students. Your trusted partner for central university admissions.
+                Expert CUET coaching with proven results and dedicated mentorship for your success.
               </p>
             </div>
             
@@ -85,14 +85,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 p-4 bg-white/10 rounded-lg">
-              <h4 className="font-semibold text-mentrr-green mb-2">🏆 Achievements</h4>
-              <ul className="text-sm text-blue-100 space-y-1">
-                <li>• 4000+ Successful Students</li>
-                <li>• Kerala&apos;s #1 CUET Institute</li>
-                <li>• 97.43% Success Rate</li>
-              </ul>
-            </div>
           </div>
 
           {/* Contact Info */}

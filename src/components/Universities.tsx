@@ -104,7 +104,7 @@ const Universities = () => {
       ranking: "#18 in India",
       students: "12,000+",
       logo: "https://upload.wikimedia.org/wikipedia/en/1/1e/BBAU_logo.png",
-      featured: true
+      featured: false
     },
     {
       name: "Assam University",
@@ -116,7 +116,7 @@ const Universities = () => {
       ranking: "#22 in India",
       students: "15,000+",
       logo: "https://upload.wikimedia.org/wikipedia/en/8/8a/Assam_University_logo.png",
-      featured: true
+      featured: false
     },
     {
       name: "Tezpur University",
@@ -128,7 +128,7 @@ const Universities = () => {
       ranking: "#25 in India",
       students: "3,500+",
       logo: "https://upload.wikimedia.org/wikipedia/en/6/65/Tezpur_University_logo.png",
-      featured: true
+      featured: false
     },
     // Additional Central Universities
     {
@@ -300,7 +300,7 @@ const Universities = () => {
       featured: false
     },
     {
-      name: "Central University of Kerala",
+      name: "Central University Of Kerala",
       location: "Kasaragod",
       state: "Kerala",
       established: 2009,
@@ -309,7 +309,7 @@ const Universities = () => {
       ranking: "#70 in India",
       students: "3,200+",
       logo: "https://upload.wikimedia.org/wikipedia/en/9/92/Central_University_of_Kerala_logo.png",
-      featured: false
+      featured: true
     },
     {
       name: "Central University of Tamil Nadu",
